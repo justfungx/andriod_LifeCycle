@@ -3,10 +3,19 @@ package tw.org.iii.life;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class Page2Activity extends AppCompatActivity {
-    public TextView mesg;
+    private TextView mesg;
+    private MyApp myApp;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +34,15 @@ public class Page2Activity extends AppCompatActivity {
                 "Sound: " + (sound?"On":"Off") + "\n" +
                 "Temp: " + temp);
 
+    }
+
+    @Override
+    public void finish() {
+        Intent it = new Intent();
+        it.putExtra("a",1);
+        it.putExtra("b",2);
+        setResult(99,it);
+        super.finish();
 
     }
 }
