@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-private MyApp myApp;
+    private MyApp myApp;
 
     public MainActivity(){
         Log.d("DK", "MainActivity");
@@ -18,6 +18,11 @@ private MyApp myApp;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("DK", "onCreate");
+        myApp = (MyApp)getApplication();
+        Log.d("brad", "myApp:a=" + myApp.getA());
+        Log.d("brad", "myApp:b=" + myApp.getB());
+        myApp.setA(321);
+        myApp.setB("III");
     }
 
     @Override
